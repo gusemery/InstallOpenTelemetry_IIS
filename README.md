@@ -13,9 +13,15 @@ Install
 The format of the command is InstallOpenTelemetry.ps1 {installpath} -CollectorURL {collector url} -Platform {Platform} -ServiceNamespace {namespace}
 
 
-The Plarform and ServiceNamespace options will configure the ENV variable OTEL_RESOURCE_ATTRIBUTES.
-The CollectorURL should be in the form of "http://host.com"
-The install path should be in drive format; it will also import the $env:OTEL_DOTNET_AUTO_HOME
+-The Platform and ServiceNamespace options will configure the ENV variable OTEL_RESOURCE_ATTRIBUTES.
+-The CollectorURL should be in the form of "http://host.com"
+-The install path should be in drive format; it will also import from the environment variable  '$env:OTEL_DOTNET_AUTO_HOME'
 
+Unregister
+
+The format for this command is InstallOpenTelemetry.ps1 -Unregister
+
+
+This will STOP IIS, and unregister and remove ALL libraries that are needed for OpenTelemetry to work.  After the unregistration and deletion is complete, IIS will restart.
 
 

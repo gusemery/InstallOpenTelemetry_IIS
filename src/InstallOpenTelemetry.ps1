@@ -12,7 +12,7 @@ Param(
     [switch]$Unregister
  )
 
-
+[Net.ServicePointManager]::SecurityProtocol = 'tls12, tls';
 $otelPort = "4318"  #  Currently DotNet AUTO-Insturmentaion only supports HTTP
 $ResourceAttributes =  "platform=$($Platform),service.namespace=$($ServiceNamespace),host.name=$($env:COMPUTERNAME)"
 $otelEndpoint = "$($CollectorURL):$($otelPort)"
