@@ -29,7 +29,7 @@ if($InstallDir -eq "") {
 
 Write-Output "Downloading and importing the Install Module..."
 # Download the module
-$module_url = "https://github.com/open-telemetry/opentelemetry-dotnet-instrumentation/releases/download/v1.1.0/OpenTelemetry.DotNet.Auto.psm1"
+$module_url = "https://github.com/open-telemetry/opentelemetry-dotnet-instrumentation/releases/download/v1.11.0/OpenTelemetry.DotNet.Auto.psm1"
 $download_path = Join-Path $env:temp "OpenTelemetry.DotNet.Auto.psm1"
 
 if (-not(Test-Path -Path $download_path -PathType Leaf)) {
