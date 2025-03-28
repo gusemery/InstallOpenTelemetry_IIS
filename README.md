@@ -10,7 +10,7 @@ There are 2 functions that this script implements.
 
 Install
 
-The format of the command is InstallOpenTelemetry.ps1 {installpath} -CollectorURL {collector url} -Platform {Platform} -ServiceNamespace {namespace}
+The format of the command is InstallOpenTelemetry.ps1 {installpath} -CollectorURL {collector url} -Platform {Platform} -ServiceNamespace {NameSpace} -ServiceName {AppName}
 
 
 -The Platform and ServiceNamespace options will configure the ENV variable OTEL_RESOURCE_ATTRIBUTES.

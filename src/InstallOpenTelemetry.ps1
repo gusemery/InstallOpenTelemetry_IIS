@@ -8,13 +8,14 @@ Param(
     [string]$InstallDir = $env:OTEL_DOTNET_AUTO_HOME,
     [string]$Platform = "windows",
     [string]$ServiceNamespace = "Default",
+    [string]$ServiceName = "AppPool",
     [string]$CollectorURL = "http://localhost",
     [switch]$Unregister
  )
 
 [Net.ServicePointManager]::SecurityProtocol = 'tls12, tls';
 $otelPort = "4318"  #  Currently DotNet AUTO-Insturmentaion only supports HTTP
-$ResourceAttributes =  "platform=$($Platform),service.name=$($ServiceNamespace),host.name=$($env:COMPUTERNAME),service.name=$($ServiceNamespace)"
+$ResourceAttributes =  "platform=$($Platform),service.namespace=$($ServiceNamespace),host.name=$($env:COMPUTERNAME),service.name=$($ServiceName)"
 $otelEndpoint = "$($CollectorURL):$($otelPort)"
 
 function Set-EnvironmentVariables([string] $key, [string] $value) {
